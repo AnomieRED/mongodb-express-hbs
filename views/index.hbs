@@ -1,0 +1,24 @@
+<div class="row">
+	<h2 class="teal-text text-darken-3">Hide your link</h2>
+	<form class="col s12" action="/" method="POST">
+		<div class="row">
+			<div class="input-field col s12">
+				<input type="text" class="validate" name="url">
+				<span class="helper-text" data-error="wrong" data-success="right">Enter your URL</span>
+			</div>
+			<button type="submit" class="btn">Transform</button>
+		</div>
+	</form>
+	<div class="row">
+		{{#if renderLink.length}}
+		<ul class="col s12">
+			{{#each renderLink}}
+			<div class="section"><span class="teal-text text-darken-4">Input URL: </span>{{originUrl}}</div>
+			<li><span class="teal-text text-darken-4">Transform URL: </span><a href="{{originUrl}}" class="section" target="_blank">{{transformUrl}}</a></li>
+			{{/each}}
+		</ul>
+		{{else}}
+		<p>Waiting for your url...</p>
+		{{/if}}
+	</div>
+</div>
