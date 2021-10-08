@@ -38,16 +38,6 @@ class Controller {
 			if (!validUrl.isUri(userUrl)) {
 				return res.status(401).json('Invalid your URL');
 			}
-			// const find = await urlSchema.findOne({ originUrl: userUrl }).lean().sort({ _id: -1 }).limit(1);
-			// if (find) {
-			// 	res.status(200).json({ message: find.originUrl });
-			// } else {
-			// 	const createUrl = await urlSchema.create({
-			// 		codeId: newUrl[0],
-			// 		originUrl: userUrl,
-			// 		transformUrl: newUrl[1],
-			// 	});
-			// }
 			const createUrl = await urlSchema.create({
 				codeId: newUrl[0],
 				originUrl: userUrl,
